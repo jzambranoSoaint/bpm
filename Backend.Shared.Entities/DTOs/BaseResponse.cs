@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Backend.Shared.Entities.DTOs
 {
-    public class BaseResponse<T>
+    public class BaseResponse
     {
-        private T body;
+        private String body;
         private HttpStatusCode status;
         private String businessStatus;
         private DateTime timeResponse;
@@ -15,7 +15,7 @@ namespace Backend.Shared.Entities.DTOs
         private String path;
         private TransactionState transactionState;
 
-        public BaseResponse(T body, HttpStatusCode status, String httpBusinessStatus, DateTime timeResponse, String message, String path, TransactionState transactionState)
+        public BaseResponse(String body, HttpStatusCode status, String httpBusinessStatus, DateTime timeResponse, String message, String path, TransactionState transactionState)
         {
             this.body = body;
             this.status = status;

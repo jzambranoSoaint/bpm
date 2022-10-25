@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{58C6C7
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Shared.Adapter", "Backend.Shared.Adapter\Backend.Shared.Adapter.csproj", "{ADFEBC88-8B17-4053-85AF-6F6A6414E93D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,11 +47,15 @@ Global
 		{1FC89976-7ABB-4E3A-8511-768C674FA06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FC89976-7ABB-4E3A-8511-768C674FA06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FC89976-7ABB-4E3A-8511-768C674FA06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADFEBC88-8B17-4053-85AF-6F6A6414E93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADFEBC88-8B17-4053-85AF-6F6A6414E93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADFEBC88-8B17-4053-85AF-6F6A6414E93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADFEBC88-8B17-4053-85AF-6F6A6414E93D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {22EDC59C-3190-416A-9ECA-9629904E4584}
+		SolutionGuid = {68872C7D-4312-44FC-8CA6-A4F5BE771EAF}
 	EndGlobalSection
 EndGlobal

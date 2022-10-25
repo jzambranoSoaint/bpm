@@ -14,7 +14,8 @@ namespace Backend.Shared.Controller.Impl
         [HttpPost("/startProcess")]
         public async Task<ActionResult> iniProcessIntances(ProcessRequestDTO processRequestDTO)
         {
-            
+            ResponseBuilder res = ResponseBuilder.newBuilder();
+
             return null;
         }
 

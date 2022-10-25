@@ -42,5 +42,15 @@ namespace Backend.Shared.Entities.DTOs
             this.instanceStatus = instanceStatus;
             this.instanceStates = instanceStates;
         }
+
+        public String getContainerId()
+        {
+            return this.containerId;
+        }
+
+        public String getProcessId()
+        {
+            return this.processId;
+        }
     }
 }

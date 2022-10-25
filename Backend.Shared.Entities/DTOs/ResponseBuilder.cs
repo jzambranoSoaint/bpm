@@ -1,4 +1,5 @@
 ﻿using Azure;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Backend.Shared.Entities.DTOs
 {
-    public class ResponseBuilder<T>
+    public class ResponseBuilder
     {
-        private T response;
+        private String response;
         private HttpStatusCode httpStatus;
         private String httpBusinessStatus;
         private DateTime timeResponse;
@@ -20,60 +21,60 @@ namespace Backend.Shared.Entities.DTOs
 
         private ResponseBuilder() { this.httpBusinessStatus = ""; }
 
-        public static ResponseBuilder<T> newBuilder()
+        public static ResponseBuilder newBuilder()
         {
-            return new ResponseBuilder<T>();
+            return new ResponseBuilder();
         }
 
-        public ResponseBuilder<T> withResponse(T response)
+        public ResponseBuilder withResponse(T response)
         {
             this.response = response;
             this.timeResponse = DateTime.Now;
             return this;
         }
 
-        public ResponseBuilder<T> withPath(String path)
+        public ResponseBuilder withPath(String path)
         {
             this.path = path;
             this.timeResponse = DateTime.Now;
             return this;
         }
 
-        public ResponseBuilder<T> withStatus(HttpStatusCode status)
+        public ResponseBuilder withStatus(HttpStatusCode status)
         {
             this.httpStatus = status;
             return this;
         }
 
-        public ResponseBuilder<T> withBusinessStatus(String status)
+        public ResponseBuilder withBusinessStatus(String status)
         {
             this.httpBusinessStatus = status;
             return this;
         }
 
-        public ResponseBuilder<T> withMessage(String message)
+        public ResponseBuilder withMessage(String message)
         {
             this.message = message;
             this.timeResponse = DateTime.Now;
             return this;
         }
 
-        public ResponseBuilder<T> withTransactionState(TransactionState state)
+        public ResponseBuilder withTransactionState(TransactionState state)
         {
             this.state = state;
             this.timeResponse = DateTime.Now;
             return this;
         }
 
-        public Response buildResponse()
+        public ActionResult<BaseResponse> buildResponse()
         {
-            BaseResponse<T> baseResponse = new BaseResponse<T>(this.response, this.httpStatus, this.httpBusinessStatus, this.timeResponse, this.message, this.path, this.state);
-            return new Response(baseResponse, httpStatus);
+            //BaseResponse<T> baseResponse = new BaseResponse<T>(this.response, this.httpStatus, this.httpBusinessStatus, this.timeResponse, this.message, this.path, this.state);
+            return new BaseResponse(this.response, this.httpStatus, this.httpBusinessStatus, this.timeResponse, this.message, this.path, this.state);
         }
 
-        public BaseResponse<T> buildSimpleResponse()
+        public BaseResponse buildSimpleResponse()
         {
-            return new BaseResponse<T>(this.response, this.httpStatus, this.httpBusinessStatus, this.timeResponse, this.message, this.path, this.state);
+            return new BaseResponse(this.response, this.httpStatus, this.httpBusinessStatus, this.timeResponse, this.message, this.path, this.state);
         }
 
     }
